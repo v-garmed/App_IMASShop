@@ -1,0 +1,30 @@
+.dashboard-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.dashboard-title {
+  font-size: 34px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.dash-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 24px 14px;
+  font-size: 20px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+  transition: 0.25s;
+}
+
+.dash-card:hover {
+  transform: translateY(-6px);
+}
