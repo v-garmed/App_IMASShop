@@ -1,8 +1,4 @@
-import {
-  IonApp,
-  IonRouterOutlet,
-} from "@ionic/react";
-
+import { IonApp } from "@ionic/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Dashboard from "./pages/dashboard";
@@ -21,21 +17,19 @@ function App() {
   return (
     <IonApp>
       <BrowserRouter>
-        <IonRouterOutlet>
-          <Routes>
+        <Routes>
 
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/productos" element={<Productos />} />
-            <Route path="/agregar_producto" element={<AgregarProducto />} />
-            <Route path="/producto/:id" element={<EditarProducto />} />
-            <Route path="/inventario" element={<Inventario />} />
-            <Route path="/ventas_dia" element={<VentasDia />} />
-            <Route path="/historial" element={<Historial />} />
-            <Route path="/estado" element={<Estado />} />
-            <Route path="/configuracion" element={<Configuracion />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/agregar_producto" element={<AgregarProducto />} />
+          <Route path="/producto/:id" element={<EditarProducto />} />
+          <Route path="/inventario" element={<Inventario />} />
+          <Route path="/ventas_dia" element={<VentasDia />} />
+          <Route path="/historial" element={<Historial />} />
+          <Route path="/estado" element={<Estado />} />
+          <Route path="/configuracion" element={<Configuracion />} />
 
-          </Routes>
-        </IonRouterOutlet>
+        </Routes>
       </BrowserRouter>
     </IonApp>
   );

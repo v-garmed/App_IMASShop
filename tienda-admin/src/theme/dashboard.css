@@ -1,218 +1,136 @@
-/* ===========================================================
-   TIPOGRAFÍA GLOBAL (INTER)
-=========================================================== */
-* {
-  font-family: "Inter", system-ui, sans-serif !important;
-  -webkit-tap-highlight-color: transparent;
+/* Fondo claro SOLO para el Dashboard */
+.dashboard-bg {
+  --background: #f5f7fa;
+  background: #f5f7fa;
 }
 
-/* ===========================================================
-   FONDO SUAVE LIGHT MODE
-=========================================================== */
-.imas-bg {
-  --background: transparent;
-  background: radial-gradient(circle at 0% 0%, #f4f9ff 0%, #ffffff 40%)
-    no-repeat;
-  min-height: 100vh;
-}
-
-/* Capa glass definida para modo claro */
-.imas-overlay {
-  min-height: 100vh;
-  width: 100%;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-
-  background: rgba(255, 255, 255, 0.45);
-  padding: 18px;
-  border-radius: 0;
-}
-
-/* ===========================================================
-   HEADER PREMIUM LIGHT
-=========================================================== */
+/* Header superior */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 22px;
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+/* Header left */
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .imas-logo-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #ffb56b, #f08f36);
-  box-shadow: 0 0 8px #ffb56b;
+  width: 10px;
+  height: 10px;
+  background: #4b7bec;
+  border-radius: 50%;
 }
 
 .header-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2d2d2d;
+  font-weight: 700;
+  font-size: 20px;
 }
 
+/* Header right */
 .header-right {
   display: flex;
+  gap: 12px;
   align-items: center;
-  gap: 10px;
 }
 
 .header-pill {
-  padding: 5px 12px;
-  font-size: 11px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  text-transform: uppercase;
-  color: #444;
-  letter-spacing: 0.06em;
+  background: #eaefff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 .user-pill {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.85);
+  background: #ffffff;
   padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .user-avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #68c77b, #f0a343);
-  color: #fff;
-  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  background: #4b7bec;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  margin-right: 8px;
 }
 
-.user-role {
-  font-size: 12px;
-  color: #444;
+/* Contenedor principal */
+.dashboard-container {
+  padding: 20px;
 }
 
-/* ===========================================================
-   TITULOS
-=========================================================== */
 .dashboard-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 4px;
 }
 
 .dashboard-subtitle {
-  color: #6b6b6b;
-  font-size: 14px;
-  margin-bottom: 18px;
+  opacity: 0.7;
+  margin-bottom: 20px;
 }
 
-/* ===========================================================
-   GRID RESPONSIVE (OPTIMIZADO PARA CELULAR)
-=========================================================== */
+/* Grid 3x2 */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 
-/* Móvil pequeño */
-@media (max-width: 520px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Tablet / Escritorio */
-@media (min-width: 820px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ===========================================================
-   TARJETAS LIGHT - Estilo iOS Admin
-=========================================================== */
 .dash-card {
-  position: relative;
-  border-radius: 20px;
-  min-height: 105px;
-  padding: 16px;
+  height: 140px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   display: flex;
   align-items: flex-end;
+  padding: 16px;
+  color: white;
+  font-weight: 600;
   cursor: pointer;
-
-  /* Imagen */
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-
-  /* Glass Light */
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-
-  transition: 0.15s ease;
-}
-
-/* Capa para mejor legibilidad */
-.dash-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    160deg,
-    rgba(255, 255, 255, 0.35),
-    rgba(255, 255, 255, 0.65)
-  );
-  pointer-events: none;
+  transition: transform 0.2s ease;
 }
 
 .dash-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: scale(0.97);
 }
 
-/* Texto sobre las tarjetas */
-.dash-content {
-  position: relative;
-  z-index: 2;
-  color: #2d2d2d;
-  font-size: 17px;
-  font-weight: 600;
-}
-
-/* ===========================================================
-   IMÁGENES ASIGNADAS (SE MANTIENEN IGUAL)
-=========================================================== */
+/* Estas clases ya funcionan con tus imágenes actuales */
 .ventas {
   background-image: url("/img/dashboard/ventasdia.png");
 }
+
 .productos {
   background-image: url("/img/dashboard/productos.png");
 }
+
 .inventario {
   background-image: url("/img/dashboard/inventario.png");
 }
+
 .historial {
   background-image: url("/img/dashboard/historialventas.png");
 }
+
 .estado {
   background-image: url("/img/dashboard/estadotienda.png");
 }
+
 .configuracion {
   background-image: url("/img/dashboard/configuracion.png");
 }
