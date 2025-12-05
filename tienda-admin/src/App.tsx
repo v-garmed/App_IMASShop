@@ -1,35 +1,44 @@
-import React from "react";
-import "./theme/global.css";
+import {
+  IonApp,
+  IonRouterOutlet,
+} from "@ionic/react";
 
-import { IonApp } from "@ionic/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "@ionic/react/css/core.css";
-import "@ionic/react/css/normalize.css";
-import "@ionic/react/css/structure.css";
-import "@ionic/react/css/typography.css";
-import "@ionic/react/css/padding.css";
-import "@ionic/react/css/float-elements.css";
-import "@ionic/react/css/text-alignment.css";
-import "@ionic/react/css/text-transformation.css";
-import "@ionic/react/css/flex-utils.css";
-import "@ionic/react/css/display.css";
+import Dashboard from "./pages/dashboard";
+import Productos from "./pages/productos";
+import AgregarProducto from "./pages/agregar_producto";
+import EditarProducto from "./pages/editar_producto";
+import Inventario from "./pages/inventario";
+import VentasDia from "./pages/ventas_dia";
+import Historial from "./pages/historial";
+import Estado from "./pages/estado";
+import Configuracion from "./pages/configuracion";
 
 import "./theme/variables.css";
-import "./theme/dashboard.css";
 
-import Dashboard from "./pages/dashboard";
-
-const App: React.FC = () => {
+function App() {
   return (
     <IonApp>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-        </Routes>
+        <IonRouterOutlet>
+          <Routes>
+
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/agregar_producto" element={<AgregarProducto />} />
+            <Route path="/producto/:id" element={<EditarProducto />} />
+            <Route path="/inventario" element={<Inventario />} />
+            <Route path="/ventas_dia" element={<VentasDia />} />
+            <Route path="/historial" element={<Historial />} />
+            <Route path="/estado" element={<Estado />} />
+            <Route path="/configuracion" element={<Configuracion />} />
+
+          </Routes>
+        </IonRouterOutlet>
       </BrowserRouter>
     </IonApp>
   );
-};
+}
 
 export default App;
